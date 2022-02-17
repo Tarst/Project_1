@@ -1,0 +1,51 @@
+.post {
+  width: 100%;
+  height: 200px;
+  background: lightgreen;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: "Arial Narrow";
+}
+
+.comment {
+  margin-top: 16px;
+
+  &-item {
+    padding: 16px 16px 8px 48px;
+    border-bottom: 2px solid black;
+
+    &:nth-of-type(1) {
+      padding: 16px 16px 8px 16px;
+    }
+
+    &:nth-of-type(2) {
+      padding: 16px 16px 8px 32px;
+    }
+  }
+
+  &-btn {
+    margin-top: 8px;
+  }
+
+  &-form {
+    padding: 16px 16px 8px;
+    display: block;
+
+    &-input {
+      width: 250px;
+      height: 40px;
+      margin-left: 16px;
+    }
+
+    &-btn {
+      display: block;
+      margin-top: 16px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
