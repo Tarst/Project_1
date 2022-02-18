@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'comments';
+  ifFlag: boolean = true;
+
+  public changeFlag(): void {
+    this.ifFlag = !this.ifFlag;
+  }
 }

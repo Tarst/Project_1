@@ -20,22 +20,25 @@ export class CommentsComponent implements OnInit {
   constructor(private commentService: CommentStoreService) { }
 
   ngOnInit(): void {
-    this.createForm();
+    let keys = Object.keys(localStorage);
     const arr: CommentModel[] = [];
+    this.createForm();
     this.commentService.getComments()
       .pipe(first())
-      .subscribe();
-    let keys = Object.keys(localStorage);
-    for(let key of keys) {
-      arr.push({
-        id: +key,
-        parentId: 1,
-        dateTime: new Date(),
-        authorName: this.myName,
-        body: localStorage.getItem(key)!,
-      })
-    }
-    this.commentService.setComments(arr);
+      .subscribe(
+        () => {
+          for(let key of keys) {
+            arr.push({
+              id: +key,
+              parentId: 1,
+              dateTime: new Date(),
+              authorName: this.myName,
+              body: localStorage.getItem(key)!,
+            })
+          }
+          this.commentService.setComments(arr);
+        }
+      );
   }
 
   private createForm() {
