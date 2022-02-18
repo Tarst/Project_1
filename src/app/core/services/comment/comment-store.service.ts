@@ -8,6 +8,9 @@ import {IComment} from "../../interfaces/comment.interface";
   providedIn: 'root'
 })
 export class CommentStoreService {
+  /*
+  * По сути, в крупных проектах почти все будет в абстракциях. Код сократиться на несколько строк.
+  */
   public comments$: Observable<CommentModel[]> = defer((): Observable<CommentModel[]> => this.comments.asObservable());
   private comments: BehaviorSubject<CommentModel[]> = new BehaviorSubject<CommentModel[]>([]);
 

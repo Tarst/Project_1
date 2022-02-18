@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommentStoreService} from "../../core/services/comment/comment-store.service";
 import {first} from "rxjs";
 import {FormControl, FormGroup} from '@angular/forms';
@@ -10,6 +10,11 @@ import {CommentModel} from "../../core/models/comment.model";
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
+  /*
+  * Не использовал бустрап, хотел показать не верстку, а реализацию
+  * Нет OnPush - не стал добавлять его сюда
+  * Некоторые моменты сделал попроще ( времени было не так много)
+  */
   public comments$ = this.commentService.comments$;
   public createCommentForm!: FormGroup;
   public myName: string = 'Insaf';
